@@ -8,7 +8,7 @@ var users=[
     {id:0, name:'ngọc anh', age: 23},
     {id:0, name:'phương', age: 23}
 ];
-var name='500 anh em';
+var name='my friends';
 app.set('view engine', 'pug')
 app.set('views','./views')
 app.listen(port,()=>console.log(`App is running on port ${port}`));

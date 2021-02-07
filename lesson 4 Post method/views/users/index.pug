@@ -1,0 +1,14 @@
+h1 All users 
+a(href="/users/create") Create user
+br
+br    
+a(href="/users") All users
+br
+br
+form(action="/search" method="GET")
+    label Tìm kiếm:  
+    input(type="text" name="q")
+    input(type="submit")
+ol 
+  each user in users 
+    li=`${user.name}: ${user.age} tuổi`
