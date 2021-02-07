@@ -7,7 +7,8 @@ br
 br
 form(action="/search" method="GET")
     label Tìm kiếm:  
-    input(type="text" name="q")
+    input(type="text" name="q" placeholder="name")
+    input(type="text" name="age" placeholder="age")
     input(type="submit")
 ol 
   each user in users 
