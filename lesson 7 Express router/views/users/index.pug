@@ -1,0 +1,12 @@
+h1 All users in here: 
+a(href="/users/create") Create a new user 
+br
+br
+form(action="/users/search", method="get")
+    input(type="text",name="q",placeholder="Find by name")
+    input(type="submit")
+ul 
+  each user in users 
+    li=`${user.name}`
+      span &emsp;
+      a(href="/users/"+user.id) View info   
