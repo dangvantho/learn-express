@@ -1,0 +1,10 @@
+extends ../layouts/common.pug
+block content
+  h3.text-center Create new user
+  form.row.mt-4(action='/users/create', method='post')
+    .col-sm-4.mt-2
+      input.form-control(type='text', name='name', placeholder='Name', required='')
+    .col-sm-4.mt-2
+      input.form-control(type='text', name='mail', placeholder='Mail', required='')
+    .col-sm-4.mt-2
+      input.btn.btn-primary.form-control(type='submit')

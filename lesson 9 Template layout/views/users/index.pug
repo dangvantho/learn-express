@@ -1,0 +1,17 @@
+extends ../layouts/common.pug
+block content
+  .d-flex.flex-column.align-items-center
+    .row.m-4(style='width:600px')
+      .col-3
+        a.text-decoration-none(href='/users/create') Create new user
+      .col-9
+        form.row(action='/users/search', method='get')
+          .col(style='padding-right: 5px;')
+            input.form-control(type='text', name='q', placeholder='Find by name')
+          .col(style='padding-left: 5px;')
+            input.form-control.btn.btn-primary(type='submit')
+    p.fs-3 List users:
+    each user in users 
+        p=user.name
+          a.ms-4.mt-1.text-decoration-none(href='/users/'+user.id)
+            | View information
