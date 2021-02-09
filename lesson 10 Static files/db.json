@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": "WZSAKhd-x",
+      "name": "Dang Van Tho",
+      "email": "DANGVANTHO1234ASDF0@GMAIL.COM",
+      "phone": "7132355068"
+    },
+    {
+      "id": "E9YZb2hkp",
+      "name": "tuan tu",
+      "email": "tuantu@gmail.com",
+      "phone": "0762379612"
+    },
+    {
+      "id": "PBUx48yEb",
+      "name": "ngoc anh",
+      "email": "mr.ngocanh1998@gmail.com",
+      "phone": "02663781632"
+    }
+  ]
+}

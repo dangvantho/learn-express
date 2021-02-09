@@ -1,0 +1,14 @@
+extends ../layouts/common.pug
+block content
+   table.table.table-hover.table-bordered.border-primary.mt-4(style='text-align: center;')
+      thead
+        tr
+          th(scope='col') Name
+          th(scope='col') Phone
+          th(scope='col') Mail
+      tbody
+        tr 
+          td=user.name 
+          td=user.phone
+          td=user.email
+   

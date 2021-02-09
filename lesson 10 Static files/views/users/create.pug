@@ -1,0 +1,12 @@
+extends ../layouts/common.pug
+block content
+   .mt-4.d-flex.justify-content-center
+        form(action='', method='post', style='width:400px')
+          .form-control
+            label.mt-2(for='name') Name:
+            input.form-control(type='text', name='name')
+            label.mt-2(for='mail') Mail:
+            input.form-control(type='text', name='mail')
+            label.mt-2(for='phone') Phone:
+            input.form-control(type='text', name='phone')
+            input.btn.btn-primary.mt-3(type='submit')

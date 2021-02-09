@@ -1,0 +1,44 @@
+extends ../layouts/common.pug
+block content
+   .row.mt-4
+    .col-6.d-flex.align-items-center
+      a.text-decoration-none(href='/users/create') Create
+    .col-6
+        .row
+          input.col-6.me-4.form-control(id="find", type='text', placeholder="Find by keyword")
+
+   table.table.table-hover.table-bordered.border-primary.mt-4(style='text-align: center;')
+    thead
+      tr
+        th(scope='col') #
+        th(scope='col') Name
+        th(scope='col') Action
+    tbody#tbody
+   script(type='text/javascript').
+     let users=!{JSON.stringify(users)}
+     let tbody=document.getElementById('tbody')
+     let find=document.getElementById('find')
+     find.addEventListener("keyup",(e)=>{
+         let key=find.value.toLowerCase();
+         let matchUsers=users.filter(user=>user.name.toLowerCase().includes(key))
+         tbody.innerHTML="" 
+         render(matchUsers)
+     })
+     function render(x){
+         for(let i=0; i<x.length; i++){
+         tbody.innerHTML+=`
+                    <tr>
+                        <td>${i+1}</td>
+                        <td>${x[i].name}</td>
+                        <td>
+                           <a href="/users/${x[i].name}/${x[i].id}">View</a>
+                        </td>
+                      </tr>
+                      `
+        }
+     }
+     render(users)
+     
+     
+     
+     
