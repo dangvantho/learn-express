@@ -1,0 +1,41 @@
+extends ../layouts/common.pug
+block content
+  .container.mt-4
+    .row
+      .d-flex.align-items-center.col-6
+        a.text-decoration-none(href='/users/create')
+          | Create
+      .col-6
+        input.form-control(type='text', placeholder='Find by keyname', id="search")
+    table.table.table-bordered.border-primary.table-hover.mt-3
+      thead(style='text-align: center;')
+        tr
+          th #
+          th Name
+          th Action
+      tbody#tbody(style='text-align: center;')
+  script(type='text/javascript'). 
+       let users=!{JSON.stringify(users)}
+       let tbody=document.getElementById('tbody')
+       let search=document.getElementById('search')
+       render(users)
+       search.addEventListener('keyup',()=>{
+           let value=search.value.toLowerCase() 
+           tbody.innerHTML=""
+           let matchUsers=users.filter(user=>{
+               return user.name.toLowerCase().includes(value)
+           })
+           render(matchUsers)
+       })
+       function render(users){
+           for(let i=0; i<users.length; ++i){
+               tbody.innerHTML+=`
+                   <tr>
+                       <td>${i+1}</td>
+                       <td>${users[i].name}</td>
+                       <td>
+                          <a class="text-decoration-none"href="/users/${users[i].name}/${users[i].id}">View</a>
+                       </td>
+                   </tr>`
+           }
+        }       

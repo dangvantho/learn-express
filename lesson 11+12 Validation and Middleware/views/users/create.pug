@@ -1,0 +1,14 @@
+extends ../layouts/common.pug
+block content
+  .d-flex.justify-content-center
+    form.form-control.mt-4(action='/users/create', method='post', style='width:400px')
+      if err 
+        each e in err 
+          .alert.alert-danger=e
+      label(for='name') Name:
+      input.form-control.mb-3(type='text', name='name', value=values ? values.name :"")
+      label(for='mail') Email:
+      input.form-control.mb-3(type='text', name='mail', value=values ? values.mail:"")
+      label(for='phone') Phone number:
+      input.form-control.mb-3(type='text', name='phone', value=values ? values.phone:"")
+      input.btn.btn-primary(type='submit')
