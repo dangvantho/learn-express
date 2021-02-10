@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "id": "nPzWyFXk-",
+      "name": "tuan tu",
+      "phone": "7132355068",
+      "password": "tu"
+    },
+    {
+      "id": "wigiiyR3B",
+      "name": "tho",
+      "phone": "7132355068",
+      "password": "tho"
+    },
+    {
+      "id": "a9OqoGMJg",
+      "name": "ngoc anh",
+      "phone": "02663781632",
+      "password": "ngoc"
+    },
+    {
+      "id": "JqXF86fPe",
+      "name": "phuong",
+      "phone": "0327910405",
+      "password": "phuong"
+    },
+    {
+      "id": "Cy3NpFCYW",
+      "name": "Dang Van Tho",
+      "phone": "7132355068",
+      "password": "dangvan"
+    }
+  ]
+}

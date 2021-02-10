@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cookies and Authentication</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+
+</head>
+<body>
+    <div class="navbar navbar-light bg-dark">
+        <div class="nav-items ms-2">
+            <img src="./public/img/logo.png" style="width:200px">
+            <a href="/" class="fw-bolder fs-5 text-decoration-none ms-3 text-light">Home</a>
+            <a href="/users" class="fw-bolder fs-5 text-decoration-none ms-3 text-light">Users</a>
+            <a href="/contact" class="fw-bolder fs-5 text-decoration-none ms-3 text-light">Contact</a>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center mt-4">
+        <form method="POST" action="/users/create" class="form-control" style="width: 400px;">
+            <label for="">Name:</label>
+            <input type="text" class="form-control mb-3" name="name"/>
+            <label for="">Phone:</label>
+            <input type="text" class="form-control mb-3" name="phone"/>
+            <label for="">Password:</label>
+            <input type="password" class="form-control mb-3" name="password"/>
+        </form>
+    </div>
+</body>
+</html>

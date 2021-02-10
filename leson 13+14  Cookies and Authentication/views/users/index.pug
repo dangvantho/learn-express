@@ -1,0 +1,27 @@
+extends ../layouts/common.pug
+block content
+    .container.mt-4
+        if err 
+          .row.alert.alert-danger=err
+        .row
+          .col
+            a.text-decoration-none(href='/users/create') Create user
+          .col
+            input.form-control(id="find", type='text', placeholder='Find by keyword')
+        table.table.table-hover.table-bordered.border-primary.mt-4
+          thead(style='text-align: center;')
+            tr
+              th #
+              th Name
+              th Action
+          tbody#tbody(style="text-align:center;")
+    script(src="/js/index.js")       
+    script.
+      let users=!{JSON.stringify(users)}
+      let tbody=document.getElementById('tbody')
+      render(users,tbody)
+      let find=document.getElementById('find')
+      find.addEventListener('keyup',()=>{
+          let key=find.value 
+          findUsers(key,users,tbody)
+      })

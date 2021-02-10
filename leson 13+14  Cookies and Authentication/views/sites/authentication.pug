@@ -1,0 +1,13 @@
+extends ../layouts/common.pug
+block content
+    .d-flex.justify-content-center.mt-4
+        form.form-control.pt-3(method='POST', action='/login', style='width: 400px;')
+
+          if errs 
+             each e in errs 
+              .alert.alert-danger=e
+          label(for='') Name:
+          input.form-control.mb-3(type='text', name='name', value=values?values.name:"")
+          label(for='') Password:
+          input.form-control.mb-3(type='password', name='password', value=values?values.password:"")
+          input.btn.btn-primary.mb-3.px-4(type='submit',value='Login')
