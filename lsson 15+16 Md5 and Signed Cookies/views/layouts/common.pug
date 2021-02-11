@@ -1,0 +1,19 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  title Document
+  link(rel='stylesheet', href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css')
+.navbar.navbar-light.bg-light.px-4
+  .navbar-item
+    img(src='/img/logo.png', style='width:200px')
+    a.text-decoration-none.ms-4(href='/') Home
+    a.text-decoration-none.ms-4(href='/users') Users
+    a.text-decoration-none.ms-4(href='/product') Product
+  .navbar-item.d-flex.align-items-center
+    if userAu
+      .fs-4.me-4=userAu.name
+      a.text-decoration-none(href='/logout') Log out
+    else  
+      a.text-decoration-none.me-4.login(href='/login') Login
+      a.text-decoration-none.me-4.signin(href='/signin') Sign-in 
+block content    
