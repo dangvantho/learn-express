@@ -1,0 +1,50 @@
+extends ../layouts/common.pug
+block content
+    .container
+        .row
+            each product, index in products
+                .col-3.mb-4
+                  .card
+                    img.card-image-top(src=product.img, style='height:50%', alt='/product?page=2')
+                    .card-body
+                      .card-title.name=product.name
+                      .card-text=product.title
+                      p.count.text-center.mt-3 0  
+                    a.btn.btn-primary.add.mx-4.mb-4(data-id=index) Add to cart        
+        .btn-group.m-4(role='group', aria-label='First group')
+          if numOfPages <= 4
+            - for(let i=0; i<numOfPages; ++i)
+              a.btn.btn-outline-primary(href='/product?page='+(i+1))=i+1
+          else    
+            button.btn.btn-outline-primary(type='button') &lt;
+            a.btn.btn-outline-primary(href='/product?page=1') 1
+            a.btn.btn-outline-primary(href='/product?page=2') 2
+            a.btn.btn-outline-primary(href='') ...
+            a.btn.btn-outline-primary(href='/product?page=3') 3
+            a.btn.btn-outline-primary(href='/product?page=4') 4
+            button.btn.btn-outline-primary(type='button') &gt;
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js") 
+    script.
+       let addToCart=document.getElementsByClassName('add')
+       for(let add of addToCart){
+           add.addEventListener('click',(e)=>{
+               if(document.cookie.includes('userId')){
+                   let id=e.target.dataset.id
+                   let name=document.getElementsByClassName('name')[parseInt(id)]
+                   let count=document.getElementsByClassName('count')[parseInt(id)]
+                   let num=parseInt(count.textContent)+1
+                   count.textContent=num
+                   axios({
+                          method: 'post',
+                          url: '/user',
+                          data: {
+                            name: name.textContent,
+                            quantity: num
+                          }
+                        });
+               }
+               else{
+                   window.location="http://localhost:3000/login";
+               }  
+           })
+       }      
