@@ -1,0 +1,18 @@
+extends ../layouts/common.pug
+block content
+  .container
+    table.table.table-primary.bg-primary.table-bordered.border-primary.table-hover 
+        thead 
+          tr 
+            th #
+            th Name 
+            th Image Link 
+            th Action
+        tbody 
+            
+            tr 
+              td=key+1
+              td=product.name 
+              td
+                img(src=product.img)
+              td=product.decription 

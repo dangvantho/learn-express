@@ -1,0 +1,12 @@
+extends ../layouts/common.pug
+block content
+  .container
+    form.form-control(action="?_method=PUT", method="post")
+       label(for="") Name: 
+       input.form-control.my-2(type="text",name='name',value=product.name)
+       label(for="") Link image: 
+       input.form-control.my-2(type="text",name='img',value=product.img)
+       label(for="") Decription: 
+       textarea.form-control.my-2(type="text",name='decription')=product.decription
+       input.btn.btn-primary.px-4.py-2(type="submit")
+

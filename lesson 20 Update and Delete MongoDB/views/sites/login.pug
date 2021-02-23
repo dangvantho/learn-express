@@ -1,0 +1,11 @@
+extends ../layouts/common.pug
+block content
+   .d-flex.justify-content-center
+        form.form-control(method='post', action='/login', style='width:300px;')
+          if errs 
+            .form-control.mt-2.alert.alert-danger=errs
+          label(for='') Name:
+          input.form-control.my-2(type='text' name='name')
+          label(for='') Password:
+          input.form-control.my-2(type='password' name='password')
+          input.btn.btn-primary.px-4.my-2(type='submit')

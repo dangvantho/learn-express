@@ -1,0 +1,36 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible', content='IE=edge')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  title Update and Delete
+  link(rel='stylesheet', href='/css/bootstrap.min.css')
+.navbar.navbar-light.navbar-expand-sm.bg-light.mb-4
+  .container-fluid
+    .navbar-brand
+      img(src='/img/logo.png', alt='logo', style='width:200px;')
+    button.navbar-toggler(data-bs-toggle='collapse', aria-expanded='false', data-bs-target='#navbarToggler')
+      span.navbar-toggler-icon
+    #navbarToggler.navbar-collapse.collapse.d-sm-flex.justify-content-sm-between
+      ul.navbar-nav
+        li.nav-item
+          a.nav-link(href='/') Home
+        li.nav-item
+          a.nav-link(href='/user') User
+        li.nav-item
+          a.nav-link(href='/products') Products
+      ul.navbar-nav
+        if user
+          li.nav-item.dropdown
+            button#dropdown-menu.btn.btn-light.dropdown-toggler(type='button', data-bs-toggle='dropdown', aria-expanded='false')=user.name
+            ol.dropdown-menu.py-0(aria-labelledby='dropdown-menu')
+              a.dropdown-item.nav-link.ps-2(href='/user') Infor
+              a.dropdown-item.nav-link.ps-2(href='/logout') Logout
+        else    
+          li.nav-item
+            a.nav-link(href='/login') Login
+          li.nav-item
+            a.nav-link(href='/register') Register
+        
+script(src='/js/bootstrap.bundle.min.js')
+block content

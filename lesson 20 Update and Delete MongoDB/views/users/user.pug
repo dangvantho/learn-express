@@ -1,0 +1,15 @@
+extends ../layouts/common.pug
+block content
+  .container
+    table.table.table-primary.bg-primary.table-bordered.border-primary.table-hover 
+        thead 
+          tr 
+            th Name 
+            th Phone 
+            th Hash Password
+        tbody 
+            
+            tr 
+              td=user.name
+              td=user.phone 
+              td=user.password

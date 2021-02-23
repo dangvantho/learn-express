@@ -1,0 +1,48 @@
+extends ../layouts/common.pug
+block content
+  .container
+    table.table.table-primary.bg-primary.table-bordered.border-primary.table-hover 
+        thead 
+          tr 
+            th #
+            th Name 
+            th Image Link 
+            th Action
+        tbody 
+           each product,key in products 
+             tr 
+               td=key+1
+               td=product.name 
+               td
+                 img(src=product.img)
+               td
+                 a.text-decoration-none(href='',data-bs-toggle="modal", data-bs-target="#delete-modal", data-bs-whatever=product._id) Delete
+                 span &emsp;
+                 a.text-decoration-none(href=`/products/${product._id}`) Edit  
+  #delete-modal.modal.fade(tabindex='-1', aria-labelledby='exampleModalLabel', aria-hidden='true')
+    .modal-dialog
+      .modal-content
+        .modal-header
+          h5#exampleModalLabel.modal-title Delete product
+          button.btn-close(type='button', data-bs-dismiss='modal', aria-label='Close')
+        .modal-body
+          | Are you sure you want to delete it?
+        .modal-footer
+          button.btn.btn-secondary(type='button', data-bs-dismiss='modal') Close
+          button#btn-delete.btn.btn-primary(type='button') Delete
+  form.form-control(name="form-delete", method="post")        
+  script.
+    var exampleModal = document.getElementById('delete-modal')
+    var btnDelete=document.getElementById('btn-delete')
+    var formDelete=document.forms['form-delete']
+    var id
+    exampleModal.addEventListener('show.bs.modal', function (event) {
+      // Button that triggered the modal
+      var button = event.relatedTarget
+      // Extract info from data-bs-* attributes
+      id = button.getAttribute('data-bs-whatever')
+    })
+    btnDelete.addEventListener('click',()=>{
+      formDelete.action=`/products/${id}?_method=DELETE`
+      formDelete.submit()
+    })                         
