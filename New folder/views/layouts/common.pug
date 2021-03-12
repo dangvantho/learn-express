@@ -1,0 +1,115 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible', content='IE=edge')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  title SeaLink
+  link(rel='stylesheet', href='/bootstrap.min.css')
+  link(rel='stylesheet', href='/font/themify-icons.css')
+  link(rel='stylesheet', href='/main.css')
+  link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css')
+header
+  .header-top.d-none.d-sm-block.bg-black-50.py-2
+    .container
+      .row.justify-content-between
+        .col-6
+          a.header-top__phone.text-decoration-none.text-black-50(href='')
+            i.ti-mobile
+            |                       sealink@sealinkpos.com.vn
+        .col-6.d-flex.justify-content-end
+          .header-top__location
+            a.text-decoration-none.text-black-50(href='')
+              i.ti-location-pin
+              |  Bà Rịa,Vũng Tàu, Việt Nam
+            p
+              | Số 02, Lô L5, đường Phạm Văn Đồng, phường 10, thành phố Vũng Tàu, tỉnh Bà Rịa Vũng Tàu, Việt Nam
+  // Navbar 1
+  // As a link
+  nav.navbar.navbar-expand-md.navbar-light
+    .container
+      a.navbar-brand(href='#')
+        img(src='/img/logo.png', style='width:210px; ')
+      button.navbar-toggler(type='button', data-bs-toggle='collapse', data-bs-target='#navbarSupportedContent', aria-expanded='false')
+        span.navbar-toggler-icon
+      form.input-group.d-none.d-lg-flex.ms-4
+        input.form-control.me-2(type='search', placeholder='Search', aria-label='Search')
+      ul.d-none.d-lg-flex.navbar-nav.mb-2.mb-lg-0
+        li.nav-item
+          a.nav-link(href='')
+            img.border-end.pe-2(src='/img/vn.png')
+        li.nav-item
+          a.nav-link.px-0(href='')
+            img(src='/img/gb.png', alt='')
+        li.nav-item
+          a.nav-link(href='')
+            img(src='/img/20years-g.png', style='width: 200px;')
+  // As a heading
+  nav.navbar.navbar-expand-md.navbar-light
+    .container
+      #navbarSupportedContent.collapse.navbar-collapse
+        ul.navbar-nav.me-auto.mb-2.mb-lg-0
+          li.nav-item.me-lg-3
+            a.nav-link(href='/') Home
+          li.nav-item.dropdown.me-lg-3
+            a#navbarDropdown.nav-link.dropdown-toggle(href='/service', role='button', data-bs-toggle='dropdown', aria-expanded='false')
+              | Dịch vụ
+            ul.dropdown-menu(aria-labelledby='navbarDropdown')
+              li
+                a.dropdown-item(href='/service') Dẫn đường tàu
+          li.nav-item.me-lg-3
+            a.nav-link(href='/equiqment') Thiết bị
+          li.nav-item.me-lg-3
+            a.nav-link(href='/news') Tin tức
+          li.nav-item.me-lg-3
+            a.nav-link(href='/introduction') Giới thiệu
+          li.nav-item.me-lg-3
+            a.nav-link(href='/contact') Liên hệ
+        form.d-md-none
+          input.form-control.me-2(type='search', placeholder='Search', aria-label='Search')
+block content          
+footer.mt-4
+  .container-fluid
+    .row.justify-content-around.pt-5.pb-2.px-2.bg-footer__top.border-bottom
+      .col-6.col-sm-3
+        img.w-100(src='./img/logo.png', style='max-width: 150px;')
+      .col-6.col-sm-3
+        .row.text-light
+          h4 Liên hệ
+        .row
+          ul
+            li.text-light.pb-1
+              i.ti-location-pin
+              |  Số 02, Lô L5, đường Phạm Văn Đồng, phường 10, 
+              |  thành phố Vũng Tàu, tỉnh Bà Rịa Vũng Tàu, Việt Nam
+            li.text-light.pb-1
+              i.ti-mobile
+              |                   +84 2543 595919
+            li.text-light.pb-1
+              i.ti-email
+              |                   sealink@sealinkpos.com.vn
+            li.text-light.pb-1
+              i.ti-money
+              |                   0081001231919 Vietcombank, chi nhánh Vũng Tàu
+            li.text-light
+      .col-6.col-sm-3
+        .row.text-light
+          h4 Liên kết
+        .row
+          ul
+            li
+              a.text-decoration-none.text-light(href='/') Trang chủ
+            li
+              a.text-decoration-none.text-light(href='/equiqment') Thiết bị
+            li
+              a.text-decoration-none.text-light(href='/service') Dịch vụ
+            li
+              a.text-decoration-none.text-light(href='/news') Tin tức
+            li
+              a.text-decoration-none.text-light(href='') Giàn khoan
+      .col-6.col-sm-3
+        .row.text-light
+          h4 Theo dõi
+        .row
+    .row.bg-footer__bottom.px-2.py-3.justify-content-center.text-light
+      | &copy; copyright 2019 by HongTQ
+script(src='./bootstrap.bundle.min.js')

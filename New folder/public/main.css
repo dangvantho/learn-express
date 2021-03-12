@@ -1,0 +1,70 @@
+
+/* Common */
+.text-shadow{
+    text-shadow: 0 0 6px rgb(17, 16, 16);
+}
+.bg-black-50{
+    background-color: #f2f3f6;
+}
+
+.header-top__location {
+    position: relative;
+}
+.header-top__location p{
+    display: none;
+    position: absolute;
+    top: 33px;
+    right: 0;
+    z-index: 100;
+
+    width: 50vw;
+    padding: 0 20px;
+    color: #fff;
+    background-color: rgb(160, 156, 156);
+    opacity: 0.8;
+}
+.header-top__location:hover p{
+    display: block;
+}
+.dropdown:hover>.dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown>.dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+      pointer-events: none;
+  }
+.img-slide{
+    max-height: 700px;
+    background-size: cover;
+    filter: grayscale(25%);
+}  
+
+/* Trategy */
+.trategy_img{
+    position: relative;
+}
+.trategy_img p{
+    position: absolute;
+    top: 114px;
+    padding: 0 30px;
+    color: #fff;
+}
+/* Footer */
+.bg-footer__top{
+    background-color: #373f50;
+}
+.bg-footer__bottom{
+    background-color: #2b3445;
+}
+ ul{
+     list-style: none;
+ }
+
+ /* Service */
+ .service img{
+    width: 100%;
+    max-width: 320px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}

@@ -1,0 +1,14 @@
+extends ../layouts/admin.pug
+block content
+  form.form-control.my-3.mx-1(action='', method='post', enctype='multipart/form-data')
+    .my-3
+      label.form-label Tiêu đề
+      input.form-control(type='text', name='title', placeholder='Title')
+    .mb-3
+      label.form-label Nội dụng
+      textarea.form-control(name='content', rows='3')
+    .mb-3
+      label.form-label Ảnh
+      input#input-files(type='file', name='file')
+    .mb-3
+      input(type="submit", value="Submit") 

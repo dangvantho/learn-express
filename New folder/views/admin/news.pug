@@ -1,0 +1,20 @@
+extends ../layouts/admin.pug
+block content
+  section.service
+    a(href="/admin/news/post") Thêm dịch vụ 
+    .container
+     if news
+       each value,key in news
+         .row.my-3
+           .col-12.col-sm-4.d-flex.justify-content-center
+             - var data=''    
+             each d in imgData[key]
+              - data+=d.data.toString('base64')
+             img(src="data:image/png;base64,"+data)
+           .col-12.col-sm-8.d-flex.d-sm-block.justify-content-center.ps-sm-3.mt-3.mt-sm-0
+             .d-block.bg-light.h-100.mt-0
+               h4.text-warning=value.metadata.title
+               ul(style='list-style: square;')
+                 li=value.metadata.content
+                 li 
+                   a(href="/admin/news/"+value._id) Xóa

@@ -1,0 +1,47 @@
+extends ../layouts/common.pug
+block content
+    section.mt-3(style='min-height: 400px;')
+      .bg-info.py-4.ps-2
+        .container
+          .row.fs-3.fw-bold.text-light
+            | Tin tức hoạt động SeaLink
+      .mt-4
+       if news
+        .container(style='min-height: 200px;')
+          .row
+            .col-sm-8
+              .row.border-bottom
+                //- Transform image data to url
+                - let data=''    
+                each d in imgData[0]
+                 - data+=d.data.toString('base64')
+                img.w-100(src="data:image/png;base64,"+data, alt='')
+                //- Get title new News
+                a.text-decoration-none.fs-4.text-primary.fw-bold(href='')=news[0].metadata.title 
+                p.text-black-50=news[0].uploadDate
+                p=news[0].metadata.content
+              if news.length>1
+                - for(let i=1; i<news.length; ++i)  
+                    .row.pt-3
+                      .col-5
+                        - let data=''    
+                        each d in imgData[i]
+                         - data+=d.data.toString('base64')
+                        img.w-100(src="data:image/png;base64,"+data, alt='')
+                      .col-7.border-bottom
+                        p.text-black-50.mb-1=news[i].uploadDate
+                        p.mb-1=news[0].metadata.title
+            .d-none.d-sm-block.col-sm-4.border-start
+              .fs-5.text-primary.pb-2
+                | Tin hoạt động
+              - var count= news.length>5 ? 5: news.length  
+              - for(let i=0; i<count; ++i)  
+                    .row.pt-3.mb-2.border-bottom
+                      .col-5
+                        - let data=''    
+                        each d in imgData[i]
+                         - data+=d.data.toString('base64')
+                        img.w-100(src="data:image/png;base64,"+data, alt='',style="max-height:90px;")
+                      .col-7
+                        p.text-black-50.mb-1=news[i].uploadDate
+                        p.mb-1=news[0].metadata.title

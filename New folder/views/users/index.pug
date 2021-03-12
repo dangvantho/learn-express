@@ -1,0 +1,123 @@
+extends ../layouts/common.pug
+block content
+  section
+    #carousel.carousel.slide(data-bs-ride='carousel')
+      .carousel-inner
+        .carousel-item.active
+          img.d-block.w-100.img-slide(src='./img/flyer1.jpg', alt='...')
+          .carousel-caption.text-shadow
+            h5 Lắp đặt thiết bị
+        .carousel-item.text-shadow
+          img.d-block.w-100.img-slide(src='./img/flyer4.jpg', alt='...')
+          .carousel-caption
+            h5 Khảo sát ngoài khơi
+        .carousel-item.text-shadow
+          img.d-block.w-100.img-slide(src='./img/flyer6.jpg', alt='...')
+          .carousel-caption
+            h5 Kỹ thuật địa chất và giám sát
+      a.carousel-control-prev(role='button', data-bs-target='#carousel', data-bs-slide='prev')
+        span.carousel-control-prev-icon(aria-hidden='true')
+        span.visually-hidden Previous
+      a.carousel-control-next(role='button', data-bs-target='#carousel', data-bs-slide='next')
+        span.carousel-control-next-icon(aria-hidden='true')
+        span.visually-hidden Next
+  section.strategy
+    .container
+      .row.justify-content-center.m-3
+        .col-9.col-md-3.bg-warning.p-3.p-sm-2.rounded-2.fw-bold.text-center
+          | Chiến lược và giá trị
+      .d-flex
+        .d-none.d-lg-block
+          .trategy_img
+            img(src='./img/destop.png', alt='')
+            p
+              | SEALINK POS JSC là nơi hội tụ những nhân viên giàu kinh 
+              |nghiệm và trí tuệ kết hợp với sức mạnh và sự nhiệt tình 
+              |của tuổi trẻ tạo nên thành công. Chúng tôi tin rằng sống 
+              |và làm việc trong niềm tin theo các giá trị của sáng tạo 
+              |truyền thống là sự kết tinh của nền tảng vĩnh cửu. Tại công 
+              |ty cổ phần định vị SEALINK... JSC, văn hóa và giá trị cốt lõi 
+              |rất quan trọng đối với sự thành công của doanh nghiệp của bạn.
+        .container.ms-lg-4
+          .row.fw-bold.text-warning
+            | GIÁ TRỊ CON NGƯỜI
+          .row.my-3.p-2.border.border-warning
+            | Tài sản của Sealink là tập thể của nhân viên, là tài sản lớn nhất 
+            | chúng ta có. Tại Sealink, nhân viên được trao quyền để tối đa hóa khả 
+            | năng của họ. Các cá nhân luôn đặt lợi ích tập thể lên cao nhất, luôn làm 
+            | việc, cộng tác theo nhóm, làm việc cùng nhau vì những mục tiêu tốt nhất
+          .row.fw-bold.text-warning
+            | ĐÁNG TIN CẬY VÀ HỢP LÝ
+          .row.my-3.p-2.border.border-warning
+            | Với kinh nghiệm làm việc ở nước ngoài, chúng tôi hiểu rằng nếu chúng tôi 
+            |không thực hiện đúng từng hạng mục công việc, chúng tôi sẽ không có cơ hội 
+            |sửa chữa nó. Vì vậy, chúng tôi luôn phải làm việc với tính hợp lý cao nhất, 
+            |chính xác cho từng hành động, vật phẩm, công việc, công việc.
+          .row.fw-bold.text-warning
+            | NIỀM ĐAM MÊ
+          .row.my-3.p-2.border.border-warning
+            | Nhân viên của chúng tôi được khuyến khích hành động với niềm đam mê cho dù 
+            |đó là cố vấn cho khách hàng hay dịch vụ khảo sát. Làm việc chăm chỉ, đam mê, 
+            |không sợ khó khăn, sợ đau khổ là ý chí của mỗi cá nhân và công ty chúng tôi.
+          .row.fw-bold.text-warning
+            | ĐẠO ĐỨC CHUYÊN NGHIỆP
+          .row.my-3.p-2.border.border-warning
+            | Đạo đức làm việc, phong cách công nghiệp là nền tảng kinh doanh của SEALINK 
+            |POS. Các hoạt động kinh doanh của SEALINKPOS và được đảm bảo công bằng, minh 
+            |bạch và tôn trọng lẫn nhau.
+          .row.fw-bold.text-warning
+            | ĐỔI MỚI VÀ SÁNG TẠO
+          .row.my-3.p-2.border.border-warning
+            | Làm việc thông minh là mục tiêu của thành công lâu dài là một động lực thúc 
+            |đẩy SEALINK POS hướng tới những viễn cảnh trong tương lai, phân tích đổi mới, 
+            |ứng dụng khoa học và công nghệ hiện đại, tư vấn các giải pháp khảo sát tiên 
+            |tiến nhất cho các dự án mà SEALINK phụ trách
+  section
+    .commitment
+      .container
+        .row.justify-content-center.m-3
+          .col-9.col-md-3.bg-warning.p-3.p-sm-2.rounded-2.fw-bold.text-center
+            | Cam kết của chúng tôi
+        .row.justify-content-center.pt-2.mx-1
+          .col-12.col-md-6.col-lg-9
+            .row.my-3.border.border-warning.p-2
+              .commitment-title
+                | Tuân thủ nghiêm ngặt luật pháp, hệ thống tiêu chuẩn, quy trình, chuẩn mực và tiêu chuẩn đạo đức.
+            .row.my-3.border.border-warning.p-2
+              .commitment-title
+                | Duy trì văn hóa doanh nghiệp sạch sẽ
+            .row.my-3.border.border-warning.p-2
+              .commitment-title
+                | Tôn trọng, lắng nghe và tư vấn về các giải pháp kỹ thuật, các sản phẩm và dịch vụ KHẢO SÁT TỐT NHẤT, tốt nhất cho khách hàng
+            .row.my-3.border.border-warning.p-2
+              .commitment-title
+                | Hợp tác theo nguyên tắc cởi mở, công bằng và cùng có lợi
+            .row.my-3.border.border-warning.p-2
+              .commitment-title
+                | Hãy là một doanh nghiệp có trách nhiệm với bản thân, đồng nghiệp, xã hội và cộng đồng của bạn
+          .d-none.d-md-block.pt-3.col-md-6.col-lg-3
+            .commitment-img
+              img.w-100(src='./img/nha.jpg')
+  script.
+        document.addEventListener("DOMContentLoaded",function() {
+            var strategy = document.querySelector('.strategy');
+            var commitment=document.querySelectorAll('.commitment-title')
+            var commitmentImg=document.querySelector('.commitment-img')
+            console.log(commitment,commitmentImg)
+            window.addEventListener("scroll",function(){
+                var xmm=document.querySelector('.strategy').getBoundingClientRect().top
+                console.log(xmm)
+                if(xmm<300) {
+                  strategy.classList.add('animate__animated');
+                  strategy.classList.add('animate__backInLeft')
+                }
+                if(xmm<-400){
+                   for(let i=0; i<commitment.length; ++i){
+                      commitment[i].classList.add('animate__animated')
+                      commitment[i].classList.add('animate__backInLeft')
+                   }
+                   commitmentImg.classList.add('animate__animated')
+                   commitmentImg.classList.add('animate__backInRight')
+                }
+            })
+        })
