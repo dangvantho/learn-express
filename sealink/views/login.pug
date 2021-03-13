@@ -1,0 +1,12 @@
+extends ./layouts/admin.pug
+block content
+  section.mt-4.d-flex.justify-content-center
+    form.form-control(action="", method="post",style="width: 400px;")  
+      if errs
+        each e in errs
+          .form-control.alert.alert-danger=e
+      label.mt-2(for="") Name:
+      input.form-control(type="text",placeholder="Name",name="name")
+      label.mt-2(for="") Password:
+      input.form-control(type="password",placeholder="Password",name="password")
+      input.mt-2.btn.btn-primary.px-2(type="submit", value="Submit")     
