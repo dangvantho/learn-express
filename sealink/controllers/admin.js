@@ -59,5 +59,20 @@ class admin{
         await uploadNews(req,res)
         res.redirect('/admin/news')
     }
+
+    // [delete] /news/id
+    async deleteNews(req,res){
+        let id=req.params.id
+        News.deleteMany({_id: id}).then(res=>console.log('Delete done: ',res))
+        NewsImage.deleteMany({files_id:id}).then(res=>console.log('Delete img done'))
+        res.redirect('/admin/news')
+    }
+    // [delete] /service/id
+    async deleteService(req,res){
+        let id=req.params.id
+        Service.deleteMany({_id: id}).then(res=>console.log('Delete done: ',res))
+        ServiceImg.deleteMany({files_id:id}).then(res=>console.log('Delete img done'))
+        res.redirect('/admin/service')
+    }
 }
 module.exports=new admin

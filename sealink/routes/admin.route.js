@@ -14,5 +14,9 @@ router.get('/service/post',adminController.service)
 router.post('/service/post',adminController.servicePost)
 //[post] /news
 router.post('/news/post',adminController.newsPost)
+// [delete] /news/id
+router.get('/news/:id/delete',adminController.deleteNews)
+// [delete] /service/id
+router.get('/service/:id/delete',adminController.deleteService)
 
 module.exports=router

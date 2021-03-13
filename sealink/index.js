@@ -7,6 +7,7 @@ const userRoute=require('./routes/user.route')
 const loginRoute=require('./routes/login.route')
 const verifyToken=require('./middleware/verify.token')
 const cookie=require('cookie-parser')
+const override=require('method-override')
 
 //Connect to Database
 db.connect
@@ -17,6 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
 app.use(express.static('public'))
 app.use(cookie())
+app.use(override('_method')) //Override method 
 
 // /admin/
 app.use('/admin',verifyToken.verify,adminRoute)
